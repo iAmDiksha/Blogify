@@ -1,0 +1,31 @@
+.app-shell {
+  min-height: 100vh;
+  position: relative;
+}
+
+.app-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top left, rgba(12, 74, 110, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(14, 116, 144, 0.12), transparent 24%),
+    radial-gradient(circle at bottom center, rgba(15, 118, 110, 0.12), transparent 30%);
+  z-index: 0;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+
+@media (min-width: 768px) {
+  .app-content {
+    width: min(1200px, calc(100% - 3rem));
+    padding-top: 2rem;
+  }
+}

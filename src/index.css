@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --bg: #07111f;
+    --bg-soft: #0d1b2f;
+    --panel: rgba(10, 23, 40, 0.78);
+    --panel-strong: rgba(7, 17, 31, 0.92);
+    --line: rgba(148, 163, 184, 0.16);
+    --text: #e2edf7;
+    --muted: #94a9bd;
+    --brand: #7dd3fc;
+    --brand-strong: #22c55e;
+    --brand-deep: #0f766e;
+    --danger: #fb7185;
+    --shadow: 0 30px 80px rgba(2, 8, 23, 0.45);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    background:
+      linear-gradient(135deg, rgba(10, 20, 35, 0.98), rgba(4, 11, 23, 0.98)),
+      radial-gradient(circle at top, rgba(34, 211, 238, 0.08), transparent 28%);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .page-section {
+    @apply rounded-[28px] border border-white/10 backdrop-blur-xl;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(7, 17, 31, 0.94));
+    box-shadow: var(--shadow);
+  }
+
+  .section-padding {
+    @apply px-5 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-10;
+  }
+
+  .hero-title {
+    font-family: "Playfair Display", serif;
+    @apply text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl;
+  }
+
+  .section-title {
+    font-family: "Playfair Display", serif;
+    @apply text-3xl font-semibold tracking-tight sm:text-4xl;
+  }
+
+  .section-copy {
+    @apply text-sm leading-7 text-slate-300 sm:text-base;
+  }
+
+  .ui-card {
+    @apply rounded-[24px] border border-white/10 bg-slate-950/40 p-5 shadow-2xl transition duration-300;
+  }
+
+  .ui-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(125, 211, 252, 0.3);
+  }
+
+  .ui-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition duration-200;
+  }
+
+  .ui-button-primary {
+    @apply ui-button text-slate-950;
+    background: linear-gradient(135deg, #7dd3fc, #67e8f9);
+    box-shadow: 0 18px 40px rgba(103, 232, 249, 0.22);
+  }
+
+  .ui-button-primary:hover {
+    filter: brightness(1.03);
+    transform: translateY(-1px);
+  }
+
+  .ui-button-secondary {
+    @apply ui-button border border-white/10 bg-white/5 text-slate-100;
+  }
+
+  .ui-button-secondary:hover {
+    @apply border-cyan-300/30 bg-cyan-300/10;
+  }
+
+  .ui-button-danger {
+    @apply ui-button border border-rose-400/20 bg-rose-500/10 text-rose-200;
+  }
+
+  .ui-button-danger:hover {
+    @apply bg-rose-500/20;
+  }
+
+  .ui-input {
+    @apply w-full rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3 text-slate-100 outline-none transition duration-200 placeholder:text-slate-500;
+  }
+
+  .ui-input:focus {
+    @apply border-cyan-300/50 ring-2 ring-cyan-300/20;
+  }
+
+  .ui-label {
+    @apply mb-2 block text-sm font-semibold uppercase tracking-[0.18em] text-slate-300;
+  }
+
+  .ui-chip {
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200;
+  }
+
+  .tag {
+    @apply inline-flex cursor-pointer items-center rounded-full border border-white/10 px-3 py-1.5 text-sm capitalize text-slate-300 transition duration-200;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .tag:hover {
+    @apply border-cyan-300/40 bg-cyan-300/10 text-white;
+  }
+
+  .tag-active {
+    @apply border-cyan-300/50 text-cyan-100;
+    background: rgba(103, 232, 249, 0.14);
+  }
+
+  .markdown-shell [data-color-mode="dark"] {
+    background: transparent !important;
+  }
+}
+
+.wmde-markdown,
+.w-md-editor,
+.w-md-editor-toolbar {
+  background: transparent !important;
+  color: var(--text) !important;
+}
+
+.w-md-editor {
+  border-radius: 1rem !important;
+  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+  overflow: hidden;
+}
+
+.w-md-editor-fullscreen {
+  background: #07111f !important;
+}
+
+.w-md-editor-fullscreen .w-md-editor-toolbar,
+.w-md-editor-fullscreen .w-md-editor-content,
+.w-md-editor-fullscreen .w-md-editor-input,
+.w-md-editor-fullscreen .w-md-editor-preview,
+.w-md-editor-fullscreen .wmde-markdown,
+.w-md-editor-fullscreen .wmde-markdown-color {
+  background: #07111f !important;
+}
+
+.w-md-editor-toolbar {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14) !important;
+}
+
+.w-md-editor-text,
+.w-md-editor-text-input,
+.w-md-editor-text-pre,
+.wmde-markdown-color {
+  color: var(--text) !important;
+}
+
+.w-md-editor-text-input,
+.w-md-editor-text-pre > code,
+.wmde-markdown {
+  font-family: "Manrope", sans-serif !important;
+}
+
+.wmde-markdown {
+  line-height: 1.8 !important;
+}
+
+.wmde-markdown pre,
+.wmde-markdown code {
+  white-space: pre-wrap;
+}
