@@ -5,19 +5,20 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
-    --bg: #07111f;
-    --bg-soft: #0d1b2f;
-    --panel: rgba(10, 23, 40, 0.78);
-    --panel-strong: rgba(7, 17, 31, 0.92);
-    --line: rgba(148, 163, 184, 0.16);
-    --text: #e2edf7;
-    --muted: #94a9bd;
-    --brand: #7dd3fc;
-    --brand-strong: #22c55e;
-    --brand-deep: #0f766e;
-    --danger: #fb7185;
-    --shadow: 0 30px 80px rgba(2, 8, 23, 0.45);
+    color-scheme: light;
+    --bg: #f5f9ff;
+    --bg-soft: #eef5ff;
+    --panel: rgba(255, 255, 255, 0.88);
+    --panel-strong: rgba(255, 255, 255, 0.96);
+    --line: rgba(59, 130, 246, 0.12);
+    --text: #15304b;
+    --muted: #5f7691;
+    --brand: #2563eb;
+    --brand-soft: #dbeafe;
+    --brand-strong: #1d4ed8;
+    --brand-deep: #163f8c;
+    --danger: #e11d48;
+    --shadow: 0 24px 60px rgba(37, 99, 235, 0.12);
   }
 
   * {
@@ -32,8 +33,9 @@
     margin: 0;
     font-family: "Manrope", sans-serif;
     background:
-      linear-gradient(135deg, rgba(10, 20, 35, 0.98), rgba(4, 11, 23, 0.98)),
-      radial-gradient(circle at top, rgba(34, 211, 238, 0.08), transparent 28%);
+      radial-gradient(circle at top left, rgba(59, 130, 246, 0.13), transparent 26%),
+      radial-gradient(circle at top right, rgba(14, 165, 233, 0.1), transparent 24%),
+      linear-gradient(180deg, #fbfdff, #eff6ff);
     color: var(--text);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
@@ -58,8 +60,11 @@
 
 @layer components {
   .page-section {
-    @apply rounded-[28px] border border-white/10 backdrop-blur-xl;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(7, 17, 31, 0.94));
+    @apply rounded-[28px] border backdrop-blur-xl;
+    border-color: rgba(37, 99, 235, 0.1);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 251, 255, 0.94)),
+      linear-gradient(135deg, rgba(59, 130, 246, 0.03), transparent 45%);
     box-shadow: var(--shadow);
   }
 
@@ -78,16 +83,19 @@
   }
 
   .section-copy {
-    @apply text-sm leading-7 text-slate-300 sm:text-base;
+    @apply text-sm leading-7 sm:text-base;
+    color: var(--muted);
   }
 
   .ui-card {
-    @apply rounded-[24px] border border-white/10 bg-slate-950/40 p-5 shadow-2xl transition duration-300;
+    @apply rounded-[24px] border p-5 shadow-xl transition duration-300;
+    border-color: rgba(59, 130, 246, 0.1);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(244, 249, 255, 0.96));
   }
 
   .ui-card:hover {
     transform: translateY(-2px);
-    border-color: rgba(125, 211, 252, 0.3);
+    border-color: rgba(37, 99, 235, 0.22);
   }
 
   .ui-button {
@@ -95,9 +103,9 @@
   }
 
   .ui-button-primary {
-    @apply ui-button text-slate-950;
-    background: linear-gradient(135deg, #7dd3fc, #67e8f9);
-    box-shadow: 0 18px 40px rgba(103, 232, 249, 0.22);
+    @apply ui-button text-white;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    box-shadow: 0 16px 34px rgba(37, 99, 235, 0.22);
   }
 
   .ui-button-primary:hover {
@@ -106,15 +114,22 @@
   }
 
   .ui-button-secondary {
-    @apply ui-button border border-white/10 bg-white/5 text-slate-100;
+    @apply ui-button border;
+    border-color: rgba(59, 130, 246, 0.14);
+    background: rgba(255, 255, 255, 0.72);
+    color: #23405f;
   }
 
   .ui-button-secondary:hover {
-    @apply border-cyan-300/30 bg-cyan-300/10;
+    border-color: rgba(37, 99, 235, 0.28);
+    background: rgba(219, 234, 254, 0.8);
   }
 
   .ui-button-danger {
-    @apply ui-button border border-rose-400/20 bg-rose-500/10 text-rose-200;
+    @apply ui-button border;
+    border-color: rgba(225, 29, 72, 0.16);
+    background: rgba(255, 241, 242, 0.9);
+    color: #be123c;
   }
 
   .ui-button-danger:hover {
@@ -122,33 +137,47 @@
   }
 
   .ui-input {
-    @apply w-full rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3 text-slate-100 outline-none transition duration-200 placeholder:text-slate-500;
+    @apply w-full rounded-2xl border px-4 py-3 outline-none transition duration-200;
+    border-color: rgba(59, 130, 246, 0.14);
+    background: rgba(255, 255, 255, 0.92);
+    color: #16324d;
   }
 
   .ui-input:focus {
-    @apply border-cyan-300/50 ring-2 ring-cyan-300/20;
+    @apply ring-2;
+    border-color: rgba(37, 99, 235, 0.34);
+    --tw-ring-color: rgba(37, 99, 235, 0.14);
   }
 
   .ui-label {
-    @apply mb-2 block text-sm font-semibold uppercase tracking-[0.18em] text-slate-300;
+    @apply mb-2 block text-sm font-semibold uppercase tracking-[0.18em];
+    color: #47627c;
   }
 
   .ui-chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200;
+    @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium;
+    border-color: rgba(59, 130, 246, 0.14);
+    background: rgba(219, 234, 254, 0.72);
+    color: #28538a;
   }
 
   .tag {
-    @apply inline-flex cursor-pointer items-center rounded-full border border-white/10 px-3 py-1.5 text-sm capitalize text-slate-300 transition duration-200;
-    background: rgba(255, 255, 255, 0.04);
+    @apply inline-flex cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm capitalize transition duration-200;
+    border-color: rgba(59, 130, 246, 0.12);
+    color: #526d87;
+    background: rgba(255, 255, 255, 0.82);
   }
 
   .tag:hover {
-    @apply border-cyan-300/40 bg-cyan-300/10 text-white;
+    border-color: rgba(37, 99, 235, 0.24);
+    background: rgba(219, 234, 254, 0.85);
+    color: #1d4ed8;
   }
 
   .tag-active {
-    @apply border-cyan-300/50 text-cyan-100;
-    background: rgba(103, 232, 249, 0.14);
+    color: #1d4ed8;
+    border-color: rgba(37, 99, 235, 0.3);
+    background: rgba(219, 234, 254, 0.95);
   }
 
   .markdown-shell [data-color-mode="dark"] {
@@ -165,12 +194,12 @@
 
 .w-md-editor {
   border-radius: 1rem !important;
-  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+  border: 1px solid rgba(59, 130, 246, 0.14) !important;
   overflow: hidden;
 }
 
 .w-md-editor-fullscreen {
-  background: #07111f !important;
+  background: #f8fbff !important;
 }
 
 .w-md-editor-fullscreen .w-md-editor-toolbar,
@@ -179,11 +208,11 @@
 .w-md-editor-fullscreen .w-md-editor-preview,
 .w-md-editor-fullscreen .wmde-markdown,
 .w-md-editor-fullscreen .wmde-markdown-color {
-  background: #07111f !important;
+  background: #f8fbff !important;
 }
 
 .w-md-editor-toolbar {
-  border-bottom: 1px solid rgba(148, 163, 184, 0.14) !important;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.14) !important;
 }
 
 .w-md-editor-text,
@@ -191,6 +220,15 @@
 .w-md-editor-text-pre,
 .wmde-markdown-color {
   color: var(--text) !important;
+}
+
+.w-md-editor-toolbar button {
+  color: #47627c !important;
+}
+
+.w-md-editor-toolbar button:hover {
+  background: rgba(219, 234, 254, 0.8) !important;
+  color: #1d4ed8 !important;
 }
 
 .w-md-editor-text-input,
@@ -206,4 +244,8 @@
 .wmde-markdown pre,
 .wmde-markdown code {
   white-space: pre-wrap;
+}
+
+.wmde-markdown {
+  color: #193756 !important;
 }

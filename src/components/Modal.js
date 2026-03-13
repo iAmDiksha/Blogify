@@ -28,7 +28,7 @@ const EditModal = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-blue-950/10 p-4 backdrop-blur-md">
       <div className="page-section w-full max-w-3xl">
         <div className="section-padding space-y-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -36,7 +36,7 @@ const EditModal = ({
               <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
                 Update Post
               </p>
-              <h2 className="mt-2 text-2xl font-bold text-white">Edit your content</h2>
+              <h2 className="mt-2 text-2xl font-bold text-slate-800">Edit your content</h2>
             </div>
             <span className="ui-chip">Modal editor</span>
           </div>
@@ -75,9 +75,9 @@ const EditModal = ({
             </label>
             <label
               htmlFor="edit-image"
-              className="flex cursor-pointer items-center gap-3 rounded-3xl border border-dashed border-white/15 bg-white/5 px-5 py-4 text-sm text-slate-300 transition duration-200 hover:border-cyan-300/30 hover:bg-cyan-300/5"
+              className="flex cursor-pointer items-center gap-3 rounded-3xl border border-dashed border-blue-200 bg-blue-50/55 px-5 py-4 text-sm text-slate-600 transition duration-200 hover:border-blue-300 hover:bg-blue-50"
             >
-              <FaImage className="text-cyan-100" />
+              <FaImage className="text-blue-700" />
               Upload a replacement image
             </label>
             <input
@@ -93,7 +93,7 @@ const EditModal = ({
             <label htmlFor="edit-context" className="ui-label">
               Content
             </label>
-            <div className="markdown-shell overflow-hidden rounded-3xl border border-white/10 bg-slate-950/35 p-2">
+            <div className="markdown-shell overflow-hidden rounded-3xl border border-blue-100 bg-white/85 p-2">
               <MDEditor
                 id="edit-context"
                 value={editedPost.context}
@@ -104,7 +104,7 @@ const EditModal = ({
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 border-t border-white/10 pt-4 sm:flex-row sm:justify-end">
+          <div className="flex flex-col gap-3 border-t border-blue-100 pt-4 sm:flex-row sm:justify-end">
             <button onClick={handleCancelEdit} className="ui-button-secondary">
               <FaArrowLeft />
               Cancel

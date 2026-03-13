@@ -88,7 +88,7 @@ const Blogs = () => {
       <section className="page-section overflow-hidden">
         <div className="section-padding space-y-8">
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-100">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-700">
               Create A Post
             </p>
             <h1 className="section-title">Write with a calmer, cleaner workspace.</h1>
@@ -100,7 +100,7 @@ const Blogs = () => {
                 <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
                   Editor
                 </p>
-                <h2 className="mt-2 text-2xl font-bold text-white">New blog draft</h2>
+                <h2 className="mt-2 text-2xl font-bold text-slate-800">New blog draft</h2>
               </div>
               <span className="ui-chip">Responsive form</span>
             </div>
@@ -156,7 +156,7 @@ const Blogs = () => {
               <label htmlFor="context" className="ui-label">
                 Content
               </label>
-              <div className="markdown-shell overflow-hidden rounded-3xl border border-white/10 bg-slate-950/35 p-2">
+              <div className="markdown-shell overflow-hidden rounded-3xl border border-blue-100 bg-white/80 p-2">
                 <MDEditor
                   data-color-mode="dark"
                   id="context"
@@ -174,13 +174,13 @@ const Blogs = () => {
               </label>
               <label
                 htmlFor="image"
-                className="flex cursor-pointer flex-col gap-3 rounded-3xl border border-dashed border-white/15 bg-white/5 px-5 py-6 text-slate-300 transition duration-200 hover:border-cyan-300/30 hover:bg-cyan-300/5"
+                className="flex cursor-pointer flex-col gap-3 rounded-3xl border border-dashed border-blue-200 bg-blue-50/50 px-5 py-6 text-slate-600 transition duration-200 hover:border-blue-300 hover:bg-blue-50"
               >
-                <span className="flex items-center gap-3 text-base font-semibold text-white">
-                  <FaImage className="text-cyan-100" />
+                <span className="flex items-center gap-3 text-base font-semibold text-slate-800">
+                  <FaImage className="text-blue-700" />
                   Upload an image for this post
                 </span>
-                <span className="text-sm text-slate-400">
+                <span className="text-sm text-slate-500">
                   {image ? "Image selected and ready to use." : "PNG, JPG, or any image format supported by the browser."}
                 </span>
               </label>
@@ -194,7 +194,7 @@ const Blogs = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-3 border-t border-white/10 pt-4 sm:flex-row sm:justify-end">
+            <div className="flex flex-col gap-3 border-t border-blue-100 pt-4 sm:flex-row sm:justify-end">
               <button type="button" className="ui-button-secondary" onClick={() => navigate("/list")}>
                 <FaEye />
                 View Blogs

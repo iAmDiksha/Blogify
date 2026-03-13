@@ -101,7 +101,7 @@ const List = () => {
         <div className="section-padding space-y-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="space-y-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-blue-700">
                 Post Library
               </p>
               <h1 className="section-title">Manage and revisit your recent writing.</h1>
@@ -143,10 +143,10 @@ const List = () => {
             {filteredPosts.map((post, index) => (
               <article
                 key={index}
-                className="group overflow-hidden rounded-[28px] border border-white/10 bg-slate-950/45 shadow-2xl transition duration-300 hover:border-cyan-300/20"
+                className="group overflow-hidden rounded-[28px] border border-blue-100 bg-white/95 shadow-xl transition duration-300 hover:border-blue-200"
               >
                 <div className="grid h-full gap-0 md:grid-cols-[0.95fr_1.05fr]">
-                  <div className="relative min-h-[240px] overflow-hidden border-b border-white/10 bg-slate-900/70 md:min-h-full md:border-b-0 md:border-r">
+                  <div className="relative min-h-[240px] overflow-hidden border-b border-blue-100 bg-blue-50/40 md:min-h-full md:border-b-0 md:border-r">
                     {post.image ? (
                       <img
                         src={post.image}
@@ -175,11 +175,11 @@ const List = () => {
                           ))}
                     </div>
 
-                    <h2 className="text-2xl font-extrabold leading-tight text-white">
+                    <h2 className="text-2xl font-extrabold leading-tight text-slate-800">
                       {post.title}
                     </h2>
 
-                    <div className="markdown-shell mt-4 flex-1 rounded-3xl border border-white/10 bg-white/5 p-4">
+                    <div className="markdown-shell mt-4 flex-1 rounded-3xl border border-blue-100 bg-slate-50/80 p-4">
                       <MDEditor.Markdown
                         source={
                           post.context.length > 140

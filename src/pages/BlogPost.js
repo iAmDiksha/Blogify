@@ -15,7 +15,7 @@ const BlogPost = () => {
     return (
       <section className="page-section">
         <div className="section-padding">
-          <p className="text-sm text-slate-400">Loading...</p>
+          <p className="text-sm text-slate-500">Loading...</p>
         </div>
       </section>
     );
@@ -47,7 +47,7 @@ const BlogPost = () => {
               </div>
             </div>
 
-            <div className="markdown-shell rounded-[28px] border border-white/10 bg-slate-950/35 p-5 sm:p-8">
+            <div className="markdown-shell rounded-[28px] border border-blue-100 bg-white/85 p-5 sm:p-8">
               <MDEditor.Markdown
                 source={post.context}
                 data-color-mode="dark"
@@ -56,7 +56,7 @@ const BlogPost = () => {
           </article>
 
           <aside className="space-y-5">
-            <div className="overflow-hidden rounded-[28px] border border-white/10 bg-slate-950/45 shadow-2xl">
+            <div className="overflow-hidden rounded-[28px] border border-blue-100 bg-white shadow-xl">
               {post.image ? (
                 <img
                   src={post.image}
@@ -74,10 +74,10 @@ const BlogPost = () => {
               <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
                 Reading View
               </p>
-              <p className="mt-3 text-lg font-semibold text-white">
+              <p className="mt-3 text-lg font-semibold text-slate-800">
                 Focused layout for long-form content
               </p>
-              <p className="mt-3 text-sm leading-7 text-slate-400">
+              <p className="mt-3 text-sm leading-7 text-slate-600">
                 This page keeps the visual emphasis on the article while still showing
                 the category, tags, and image cleanly beside it on larger screens.
               </p>

@@ -16,28 +16,28 @@ const Navbar = () => {
   const linkClassName = ({ isActive }) =>
     `rounded-full px-4 py-2 text-sm font-semibold transition duration-200 ${
       isActive
-        ? "bg-cyan-300/15 text-cyan-100"
-        : "text-slate-300 hover:bg-white/5 hover:text-white"
+        ? "bg-blue-100 text-blue-700"
+        : "text-slate-600 hover:bg-blue-50 hover:text-blue-700"
     }`;
 
   return (
-    <header className="z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-2xl">
+    <header className="z-50 border-b border-blue-100/80 bg-white/85 backdrop-blur-2xl">
       <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-4 py-4 sm:px-6">
         <Link to="/" className="group flex items-center gap-3" onClick={closeMenu}>
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-100 shadow-lg shadow-cyan-500/10">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 text-blue-700 shadow-lg shadow-blue-100">
             <FaPenNib />
           </div>
           <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-slate-400">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-slate-500">
               Personal Publishing
             </p>
-            <p className="text-xl font-extrabold tracking-tight text-white transition duration-200 group-hover:text-cyan-100">
+            <p className="text-xl font-extrabold tracking-tight text-slate-800 transition duration-200 group-hover:text-blue-700">
               Blogify
             </p>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 p-2 lg:flex">
+        <nav className="hidden items-center gap-2 rounded-full border border-blue-100 bg-white/95 p-2 shadow-sm lg:flex">
           {navItems.map((item) => (
             <NavLink key={item.to} to={item.to} className={linkClassName}>
               {item.label}
@@ -54,7 +54,7 @@ const Navbar = () => {
         <button
           type="button"
           onClick={() => setMenuOpen((open) => !open)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-100 transition duration-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-blue-100 bg-white text-slate-700 transition duration-200 hover:border-blue-200 hover:bg-blue-50 lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
         >
@@ -63,7 +63,7 @@ const Navbar = () => {
       </div>
 
       {menuOpen && (
-        <div className="border-t border-white/10 bg-slate-950/95 px-4 py-4 lg:hidden">
+        <div className="border-t border-blue-100 bg-white/95 px-4 py-4 lg:hidden">
           <div className="mx-auto flex max-w-[1200px] flex-col gap-2">
             {navItems.map((item) => (
               <NavLink
@@ -73,8 +73,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `rounded-2xl px-4 py-3 text-sm font-semibold transition duration-200 ${
                     isActive
-                      ? "bg-cyan-300/15 text-cyan-100"
-                      : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white"
+                      ? "bg-blue-100 text-blue-700"
+                      : "bg-slate-50 text-slate-600 hover:bg-blue-50 hover:text-blue-700"
                   }`
                 }
               >
@@ -82,7 +82,7 @@ const Navbar = () => {
               </NavLink>
             ))}
             <Link to="/add-blogs" onClick={closeMenu} className="ui-button-primary mt-2">
-              Create New Post
+              Write New Post
             </Link>
           </div>
         </div>
