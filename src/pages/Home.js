@@ -36,7 +36,7 @@ const Home = () => {
               Turn quick thoughts into a professional blog collection.
             </h1>
             <p className="section-copy max-w-2xl text-slate-300">
-              BlogDown is a focused personal publishing space for drafting posts,
+              Blogify is a focused personal publishing space for drafting posts,
               organizing ideas, and presenting your writing in a cleaner way across
               desktop and mobile.
             </p>

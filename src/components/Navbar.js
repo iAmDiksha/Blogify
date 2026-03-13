@@ -4,7 +4,7 @@ import { FaBars, FaTimes, FaPenNib } from "react-icons/fa";
 
 const navItems = [
   { to: "/add-blogs", label: "Write" },
-  { to: "/list", label: "Library" },
+  { to: "/list", label: "Blogs" },
   { to: "/about", label: "About" },
 ];
 
@@ -32,7 +32,7 @@ const Navbar = () => {
               Personal Publishing
             </p>
             <p className="text-xl font-extrabold tracking-tight text-white transition duration-200 group-hover:text-cyan-100">
-              BlogDown
+              Blogify
             </p>
           </div>
         </Link>

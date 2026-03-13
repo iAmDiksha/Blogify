@@ -10,11 +10,11 @@ const About = ({ header }) => {
       <div className="section-padding grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <div className="space-y-5">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-100">
-            About BlogDown
+            About Blogify
           </p>
           <h1 className="section-title">{header}</h1>
           <p className="section-copy max-w-2xl">
-            BlogDown gives you a simple place to draft posts, keep them organized,
+            Blogify gives you a simple place to draft posts, keep them organized,
             and read them back in a cleaner interface. The refreshed layout focuses on
             clarity, responsive spacing, and a more polished publishing feel.
           </p>
